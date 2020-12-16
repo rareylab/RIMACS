@@ -1,0 +1,56 @@
+c
+c inspired by a molecule pair causing an comparison issue, here "607385 CHEMBL610435"
+c
+p edges 25 27
+n 8
+n 6
+n 6
+n 8
+n 6
+n 7
+n 6
+n 7
+n 6
+n 6
+n 7
+n 6
+n 6
+n 16
+n 8
+n 8
+n 8
+n 7
+n 6
+n 7
+n 6
+n 6
+n 8
+n 6
+n 8
+e 1 2 1
+e 2 3 1
+e 3 4 1
+e 4 5 1
+e 5 6 1
+e 6 7 4
+e 7 8 4
+e 8 9 4
+e 9 10 4
+e 10 11 1
+e 11 12 1
+e 12 13 1
+e 13 14 1
+e 14 15 1
+e 14 16 2
+e 14 17 2
+e 10 18 4
+e 18 19 4
+e 19 20 4
+e 20 21 4
+e 6 21 4
+e 9 21 4
+e 5 22 1
+e 22 23 1
+e 22 24 1
+e 3 24 1
+e 24 25 1

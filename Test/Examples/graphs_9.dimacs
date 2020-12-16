@@ -1,0 +1,20 @@
+c
+c a graph for mcs comparison
+c
+p edges 8 8
+n 8
+n 6
+n 7
+n 6
+n 8
+n 8
+n 6
+n 8
+e 1 2 2
+e 2 3 4
+e 3 4 4
+e 4 5 2
+e 4 6 4
+e 6 7 4
+e 7 8 4
+e 2 8 4

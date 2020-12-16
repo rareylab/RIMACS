@@ -1,0 +1,84 @@
+/*!
+@page installation Installation instructions
+
+This document describes the installation procedure for
+the RIMACS library.
+
+@note
+To install the RIMACS library you must first build it
+following the instructions in this document.
+Then you can use the headers in the folder `include`.
+The RIMACS library has no runtime dependencies.
+
+@warning
+This library needs a C++-14 compiler!
+
+This package uses CMake for the build process. See
+the [CMake documentation] (https://cmake.org/documentation/)
+for general configuration options.
+
+The most useful option is `-DCMAKE_INSTALL_PREFIX=<your/target/path>` for changing
+the install directory.
+
+Core library
+============
+
+Prerequisites
+-------------
+
+The RIMACS library primarily uses the STL. There is some functionality
+that is based on the [Eigen] (https://eigen.tuxfamily.org)
+library (>= 3.3) for matrix and vector operations and the
+[Boost] (https://www.boost.org/) (>=1.60) library.
+
+Building the tests requires the [Googletest] (https://github.com/google/googletest)
+framework which is downloaded automatically.
+
+The build process needs [CMake] (https://cmake.org) (>= 3.1) and a C++-14 compiler
+(for example g++, clang++ or MSVC).
+
+The location of Eigen and Boost headers can be given by the options
+`-DEIGEN_INCLUDE_DIR=<include_path>` or `-DBOOST_INCLUDE_DIR=<include_path>`, respectively.
+
+
+Installation Unix and macOS
+---------------------------
+
+Installation on Unix using `make` and the system's default C++ compiler.
+
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    make && make install
+
+Test
+----
+
+Use the following command to test the build
+of the core library. Testing is strongly recommended.
+
+    make test
+
+The program will execute all included test cases
+ensuring the algorithm behaves as expected.
+
+
+Installation Windows
+--------------------
+
+Installation on Windows using the `Visual Studio` C++ compiler and
+`MSBuild.exe` from the command line (`cmd.exe`).
+Replace `Visual Studio 15 2017` by your Version.
+
+    mkdir build
+    cd build
+    cmake.exe -G"Visual Studio 15 2017" ..
+    MSBuild.exe ALL_BUILD.vcxproj /property:Configuration=Release
+    MSBuild.exe INSTALL.vcxproj /property:Configuration=Release
+
+Use the following command to test the build
+of the core library.
+
+    MSBuild.exe RUN_TESTS.vcxproj /property:Configuration=Release
+*/
+

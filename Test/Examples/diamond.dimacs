@@ -1,0 +1,13 @@
+c
+c simple graph representing a diamond like structure
+c
+p edges 4 5
+n 6
+n 6
+n 6
+n 6
+e 1 2 1
+e 1 3 1
+e 1 4 1
+e 2 3 1
+e 3 4 1

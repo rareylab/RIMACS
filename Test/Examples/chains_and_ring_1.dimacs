@@ -1,0 +1,36 @@
+c
+c a graph combining several chain and ring fragments
+c
+p edges 16 16
+n 16
+n 16
+n 7
+n 6
+n 6
+n 6
+n 6
+n 6
+n 6
+n 7
+n 6
+n 6
+n 6
+n 7
+n 15
+n 15
+e 1 2 1
+e 2 3 1
+e 3 4 1
+e 4 5 1
+e 5 6 1
+e 6 7 1
+e 7 8 1
+e 8 9 1
+e 9 10 1
+e 10 11 1
+e 11 12 1
+e 12 13 1
+e 11 13 1
+e 13 14 1
+e 14 15 1
+e 15 16 1

@@ -1,0 +1,13 @@
+c
+c simple graph of a triod with an additional link
+c
+p edges 5 4
+n 6
+n 6
+n 6
+n 6
+n 6
+e 1 2 1
+e 2 3 1
+e 3 4 1
+e 3 5 1

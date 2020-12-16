@@ -1,0 +1,38 @@
+/*!
+
+@mainpage
+
+RIMACS is a C++ library for efficient computation
+of the maximum common substructure problem.
+The algorithm employs a recursive backtracking
+scheme inspired by subgraph algorithms, mapping
+nodes of two graphs directly onto each other.
+It is designed for chemical graphs with limited
+node degrees.
+
+It is developed at the
+University of Hamburg, ZBH - Center for Bioinformatics
+by Robert Schmidt and Matthias Rarey.
+
+The library is distributed under BSD-3-Clause license,
+see the file LICENSE and [BSD-3]
+(https://opensource.org/licenses/BSD-3-Clause).
+
+Please cite:
+
+@todo Citation
+
+For installation instructions see here:
+@subpage installation
+
+A minimal exmaple can be found here: @subpage example
+*/
+
+/*!
+@page example Minimal Example
+
+An example of all available methods provided by the RIMACS C++ library is:
+
+\include Test/RIMACSexampleTester.cpp
+
+*/

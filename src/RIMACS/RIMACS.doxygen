@@ -1,0 +1,55 @@
+/*!
+
+@page rimacs RIMACS
+
+@section introduction Introduction
+
+The RIMACS library provides an adaptable implementation for MCS comparisons of graphs.
+In order to provide a generic template free interface for as many graph classes as
+possible, RIMACS uses functors to wrap the actual implementation of the graphs used.
+The actual implementation is a substructure based MCS algorithm expanding a localized mapping
+in the smaller graph.
+
+Functors:
+There are 3 important functor classes in the Library:
+@ref AdjacencyFunctor: This functor describes a graph, wrapping any access on nodes and edges to
+  their corresponding indices in the internal implementation. Most important is that the functor
+  provides access to adjacent nodes and can test whether edges exist.
+@ref NodeCompatibilityFunctor: This functor provides the information, whether nodes can be mapped onto
+  each other or not.
+@ref EdgeCompatibilityFunctor: This functor provides the information, whether edges can be mapped onto
+  each other or not. The algorithm takes care that incident nodes are compatible.
+
+There are 2 more internal functor classes:
+@ref CachingAdjacencyFunctor: This functor extracts the adjacency of a graph described by an
+  AdjacencyFunctor and stores it in a cache (currently a SparseMatrix).
+  The branch and bound algorithm often needs to test for adjacency and iterate over adjacent nodes.
+  Using a dedicated cache is advantageaous compared to expressive pointer based graph implementations.
+  This functor is entirely used to speed up computation.
+@ref LineGraph: The MCS algorithm is based on a induced MCS computation. Converting graphs into
+  LineGraphs even the noninduced MCS can be computed. The class provides a generic wrapper to do so.
+
+
+On the toplevel folder there is the @ref MCSRunner, a class performing functor based MCS comparisons
+and a collection of specialized MCS calls for Molecules, provided in the MoleculeMCS.hpp header.
+This library also provides several functor classes for adjacency, atom- and bond-compatibility within
+the MoleculeFunctors.hpp header.
+
+Finally there is the @ref Config and the result classes.
+@ref Config: Configures the MCS with the following options:
+  * constraints for a disconnected MCS providing a maximum number of connected components in the
+    result and a minimum size of those components in the result.
+  * The result type, the global maximum or all results of maximum size.
+  * Cutoff for the maximum number of backtracking steps and a maximum number of equivalent results.
+In general the result of any MCS calculation is a std::vector of @ref MCSResult instances.
+An instance of a @ref MCSResult represents a mapping of node (or edge in the case of LineGraphs)
+indices. Additionally it holds the weight of the mapping and the cumulated sizes of the mapped
+connected components.
+In connection with a graph implementation the @ref ResultWrapper classes can provide access
+to the real node and edge types of the graph classes providing a more convenient interface on
+the @ref MCSResult.
+
+A usage example for the MCS Library can be found in the unit test:
+@include internal_lib/test/unit/MCS/MCSexampleTester.cpp
+
+*/
