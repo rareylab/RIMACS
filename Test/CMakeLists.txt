@@ -35,6 +35,10 @@ build_test(NodeOrder NodeOrderTester.cpp "")
 build_test(MinimumConstraints MinimumResultConstraintTester.cpp "")
 
 # copy all test dimacs files to execution folder once at cmake configuration time
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Examples/
-     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Examples)
-
+if(MSVC)
+  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Examples/
+  DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/Examples)
+else(MSVC)
+  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Examples/
+       DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Examples)
+endif(MSVC)

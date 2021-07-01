@@ -1,4 +1,4 @@
-RIMACS 1.0
+RIMACS 1.1
 ----------
 
 RIMACS is a C++ library for efficient computation
@@ -26,4 +26,5 @@ The detailed documentation can be found in folder
 Please Cite:
 Schmidt, R.; Krull, F.; Heinzke, A. L.; Rarey, M.;
 Disconnected Maximum Common Substructures under Constraints.
+J. Chem. Inf. Model. 2021, 61, 167−178
 https://dx.doi.org/10.1021/acs.jcim.0c00741

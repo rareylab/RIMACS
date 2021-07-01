@@ -49,7 +49,7 @@ std::vector<ComponentIndex> AdjacencyFunctor::getNodeOrderSuggestionVector(
     lastDist = distancePair.first;
   }
   atomOrderSuggestion.push_back(nofDistances);
-  ComponentIndex refDist = (nofDistances) * partial;
+  ComponentIndex refDist = static_cast<ComponentIndex>((nofDistances) * partial);
   for(ComponentIndex& dist : atomOrderSuggestion) {
     dist = std::abs(dist - refDist);
   }

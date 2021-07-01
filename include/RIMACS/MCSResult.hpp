@@ -389,7 +389,7 @@ inline void MCSResult::orderDisconnected()
   m_nodeMapping.clear();
   m_cumulatedComponentSizes = {0};
   for(const auto& c : components) {
-    m_cumulatedComponentSizes.push_back(m_cumulatedComponentSizes.back() + c.size());
+    m_cumulatedComponentSizes.push_back(static_cast<MappingIndex>(m_cumulatedComponentSizes.back() + c.size()));
     m_nodeMapping.insert(m_nodeMapping.end(), c.begin(), c.end());
   }
   m_cumulatedComponentSizes.erase(m_cumulatedComponentSizes.begin());

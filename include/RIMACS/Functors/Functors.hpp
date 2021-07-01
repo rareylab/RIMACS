@@ -102,7 +102,7 @@ public:
   virtual MappingIndex nodeGetNofEdges(
       MappingIndex nodeIdx) const
   {
-    return nodeGetEdges(nodeIdx).size();
+    return static_cast<MappingIndex>(nodeGetEdges(nodeIdx).size());
   }
 
   /**
